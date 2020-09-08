@@ -2,6 +2,22 @@
   max-width: $grid-width;
   background-color: #eee;
   margin: 0 auto;
-  margin-bottom: $gutter-vertical;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal})/2);
+    background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+
+  }
 
 }
